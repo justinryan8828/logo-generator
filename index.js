@@ -1,45 +1,30 @@
 const inquirer = require("inquirer");
+const generateShapeJS = require("./lib/shape.js");
+const fs = require("fs");
 
 const questions = [
   {
     type: "input",
-    name: "characters",
+    name: "text",
     message: "What three characters do you want your logo to say?",
   },
+  {
+    type: "input",
+    name: "textColors",
+    message: "What do you want the text color to be?",
+  },
+  {
+    type: "list",
+    name: "type",
+    message: "What shape do you want?",
+    choices: ["Triangle", "Circle", "Square"],
+  },
+  {
+    type: "input",
+    name: "color",
+    message: "What color would you like your shape?",
+  },
 ];
-
-function svgObject(name, textColor, shape, shapeColor) {
-  this.authorName = authorName;
-  this.title = title;
-  this.text = text;
-  this.createdOn = createdOn;
-  this.printMetaData = function () {
-    console.log(`Created by ${this.authorName} on ${this.createdOn}`);
-  };
-}
-
-// TODO: Create a new object using the 'BlogPost' constructor
-const post = new BlogPost(
-  "John Doe",
-  "My First Post",
-  "Dogs are super cute!",
-  "12/15/2021"
-);
-
-// TODO: Call the 'printMetaData()' method on the new object
-post.printMetaData();
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    console.log(answers);
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  });
 
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
@@ -51,12 +36,10 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((data) => {
-    const readMeInfo = generateMarkdown(data);
-    writeToFile("./output/README.md", readMeInfo);
+    const shapeInfo = generateShapeJS(data);
+    writeToFile("./lib/shape.js", shapeInfo);
   });
 }
 
 // Function call to initialize app
 init();
-
-console.log();
