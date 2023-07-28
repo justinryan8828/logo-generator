@@ -22,7 +22,7 @@ You can use it to create a logo.
 
 ## How to Contribute
 
-Helping me fix this broken code
+Possibly add more shape choices, maybe offer an option for more letters.
 
 ## Test
 
@@ -38,6 +38,6 @@ MIT
 
 E-Mail: justinryan8828@yahoo.com
 
-Repo: [justinryan8828](https://github.com/justinryan8828)
+Repo: [justinryan8828/github](https://github.com/justinryan8828/logo-generator)
 
-Pages: [Deployment](https://justinryan8828.github.io/logo-generator/)
+Pages: [Deployment](https://drive.google.com/file/d/15XCwC2JAyPH5NrsqgE05ldnoQ5du5rjG/view?usp=sharing)
